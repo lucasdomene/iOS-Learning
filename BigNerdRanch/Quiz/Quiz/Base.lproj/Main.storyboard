@@ -43,22 +43,33 @@
                                     <action selector="showAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6KD-Vz-tz9"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vIx-oc-Ruq">
+                                <rect key="frame" x="279" y="28" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="vIx-oc-Ruq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0Fh-BT-MRz"/>
                             <constraint firstItem="B4K-2z-DyA" firstAttribute="centerX" secondItem="QKO-gN-nqV" secondAttribute="centerX" id="1an-7F-gAR"/>
+                            <constraint firstItem="vIx-oc-Ruq" firstAttribute="top" secondItem="Q4Z-BA-d3u" secondAttribute="top" id="KMg-iM-rCj"/>
                             <constraint firstItem="Q4Z-BA-d3u" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="czp-Bt-6ff"/>
                             <constraint firstItem="13C-YS-1dR" firstAttribute="top" secondItem="QKO-gN-nqV" secondAttribute="bottom" constant="202" id="dYW-9z-EDU"/>
                             <constraint firstItem="QKO-gN-nqV" firstAttribute="top" secondItem="Q4Z-BA-d3u" secondAttribute="bottom" constant="8" id="e02-L7-Rnk"/>
                             <constraint firstItem="Q4Z-BA-d3u" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e5X-XI-YW4"/>
-                            <constraint firstItem="Q4Z-BA-d3u" firstAttribute="centerX" secondItem="QKO-gN-nqV" secondAttribute="centerX" id="kOW-6L-gr2"/>
+                            <constraint firstItem="QKO-gN-nqV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n65-jt-40R"/>
                             <constraint firstItem="B4K-2z-DyA" firstAttribute="top" secondItem="13C-YS-1dR" secondAttribute="bottom" constant="8" id="twz-eX-MlO"/>
                             <constraint firstItem="13C-YS-1dR" firstAttribute="centerX" secondItem="QKO-gN-nqV" secondAttribute="centerX" id="ybf-Ib-tf6"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="answerLabel" destination="13C-YS-1dR" id="LOx-fX-wU7"/>
-                        <outlet property="questionLabel" destination="Q4Z-BA-d3u" id="P1I-XX-aZV"/>
+                        <outlet property="currentQuestionLabel" destination="Q4Z-BA-d3u" id="cpT-7o-jcJ"/>
+                        <outlet property="currentQuestionLabelCenterXConstraint" destination="e5X-XI-YW4" id="3G0-r9-23o"/>
+                        <outlet property="nextQuestionLabel" destination="vIx-oc-Ruq" id="AHr-8W-alx"/>
+                        <outlet property="nextQuestionLabelCenterXConstraint" destination="0Fh-BT-MRz" id="7IV-Cu-WCK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
