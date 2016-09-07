@@ -15,6 +15,7 @@
 		A000875A1D7F6AA10087CECC /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00087591D7F6AA10087CECC /* File.swift */; };
 		A000875C1D7F6DFC0087CECC /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000875B1D7F6DFC0087CECC /* ItemStore.swift */; };
 		A000875E1D808A760087CECC /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000875D1D808A760087CECC /* ItemCell.swift */; };
+		A092498F1D809EEE0005A988 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092498E1D809EEE0005A988 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A00087591D7F6AA10087CECC /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		A000875B1D7F6DFC0087CECC /* ItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
 		A000875D1D808A760087CECC /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		A092498E1D809EEE0005A988 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				A00087591D7F6AA10087CECC /* File.swift */,
 				A000875B1D7F6DFC0087CECC /* ItemStore.swift */,
 				A000875D1D808A760087CECC /* ItemCell.swift */,
+				A092498E1D809EEE0005A988 /* DetailViewController.swift */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				A00087581D7F69FE0087CECC /* ItemsViewController.swift in Sources */,
 				A000875A1D7F6AA10087CECC /* File.swift in Sources */,
 				A000875C1D7F6DFC0087CECC /* ItemStore.swift in Sources */,
+				A092498F1D809EEE0005A988 /* DetailViewController.swift in Sources */,
 				A00087461D7F69460087CECC /* AppDelegate.swift in Sources */,
 				A000875E1D808A760087CECC /* ItemCell.swift in Sources */,
 			);
@@ -298,6 +302,7 @@
 				A00087561D7F69460087CECC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
