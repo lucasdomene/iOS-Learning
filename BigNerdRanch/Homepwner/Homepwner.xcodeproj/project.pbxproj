@@ -12,9 +12,10 @@
 		A000874D1D7F69460087CECC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A000874C1D7F69460087CECC /* Assets.xcassets */; };
 		A00087501D7F69460087CECC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A000874E1D7F69460087CECC /* LaunchScreen.storyboard */; };
 		A00087581D7F69FE0087CECC /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00087571D7F69FE0087CECC /* ItemsViewController.swift */; };
-		A000875A1D7F6AA10087CECC /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00087591D7F6AA10087CECC /* File.swift */; };
+		A000875A1D7F6AA10087CECC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00087591D7F6AA10087CECC /* Item.swift */; };
 		A000875C1D7F6DFC0087CECC /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000875B1D7F6DFC0087CECC /* ItemStore.swift */; };
 		A000875E1D808A760087CECC /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000875D1D808A760087CECC /* ItemCell.swift */; };
+		A06F1D861D80D2C1000986BA /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06F1D851D80D2C1000986BA /* ImageStore.swift */; };
 		A092498F1D809EEE0005A988 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092498E1D809EEE0005A988 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,9 +27,10 @@
 		A000874F1D7F69460087CECC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A00087511D7F69460087CECC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A00087571D7F69FE0087CECC /* ItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
-		A00087591D7F6AA10087CECC /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		A00087591D7F6AA10087CECC /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		A000875B1D7F6DFC0087CECC /* ItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
 		A000875D1D808A760087CECC /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		A06F1D851D80D2C1000986BA /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		A092498E1D809EEE0005A988 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,10 +70,11 @@
 				A000874E1D7F69460087CECC /* LaunchScreen.storyboard */,
 				A00087511D7F69460087CECC /* Info.plist */,
 				A00087571D7F69FE0087CECC /* ItemsViewController.swift */,
-				A00087591D7F6AA10087CECC /* File.swift */,
+				A00087591D7F6AA10087CECC /* Item.swift */,
 				A000875B1D7F6DFC0087CECC /* ItemStore.swift */,
 				A000875D1D808A760087CECC /* ItemCell.swift */,
 				A092498E1D809EEE0005A988 /* DetailViewController.swift */,
+				A06F1D851D80D2C1000986BA /* ImageStore.swift */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
@@ -108,6 +111,7 @@
 				TargetAttributes = {
 					A00087411D7F69460087CECC = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 8VWQC7JGT6;
 					};
 				};
 			};
@@ -148,10 +152,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A00087581D7F69FE0087CECC /* ItemsViewController.swift in Sources */,
-				A000875A1D7F6AA10087CECC /* File.swift in Sources */,
+				A000875A1D7F6AA10087CECC /* Item.swift in Sources */,
 				A000875C1D7F6DFC0087CECC /* ItemStore.swift in Sources */,
 				A092498F1D809EEE0005A988 /* DetailViewController.swift in Sources */,
 				A00087461D7F69460087CECC /* AppDelegate.swift in Sources */,
+				A06F1D861D80D2C1000986BA /* ImageStore.swift in Sources */,
 				A000875E1D808A760087CECC /* ItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,10 +270,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Homepwner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.domene.Homepwner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -276,10 +284,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Homepwner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.domene.Homepwner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -89,7 +89,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ogd-n7-Unb">
-                                <rect key="frame" x="28" y="72" width="544" height="520"/>
+                                <rect key="frame" x="28" y="72" width="544" height="476"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cvp-fJ-ag7">
                                         <rect key="frame" x="0.0" y="0.0" width="544" height="30"/>
@@ -148,25 +148,44 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6O-nR-h31">
-                                        <rect key="frame" x="0.0" y="114" width="544" height="406"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" misplaced="YES" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6O-nR-h31">
+                                        <rect key="frame" x="0.0" y="114" width="544" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="248" verticalCompressionResistancePriority="748" translatesAutoresizingMaskIntoConstraints="NO" id="LNT-PW-rSv">
+                                        <rect key="frame" x="0.0" y="143" width="544" height="334"/>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Hsw-jK-uCs" firstAttribute="leading" secondItem="cUc-cR-Xpk" secondAttribute="leading" id="SCA-4A-Cy0"/>
                                     <constraint firstItem="cUc-cR-Xpk" firstAttribute="leading" secondItem="IZn-4V-QdK" secondAttribute="leading" id="fl5-Gc-6lT"/>
                                 </constraints>
                             </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kgo-ts-uA5">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="yA5-Ms-Vrd"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="9f6-ja-CHM">
+                                        <connections>
+                                            <action selector="takePicture:" destination="egL-tO-PFx" id="wSE-yn-arr"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Ogd-n7-Unb" secondAttribute="trailing" constant="8" id="NCg-BH-hf4"/>
+                            <constraint firstAttribute="trailing" secondItem="Kgo-ts-uA5" secondAttribute="trailing" id="QPJ-PX-10o"/>
+                            <constraint firstItem="7pD-Db-WnO" firstAttribute="top" secondItem="Kgo-ts-uA5" secondAttribute="bottom" id="SnH-73-jBw"/>
+                            <constraint firstItem="Kgo-ts-uA5" firstAttribute="leading" secondItem="pH7-or-PcD" secondAttribute="leading" id="aQq-mP-mdJ"/>
+                            <constraint firstItem="Kgo-ts-uA5" firstAttribute="top" secondItem="Ogd-n7-Unb" secondAttribute="bottom" constant="8" id="jGh-v8-SIG"/>
                             <constraint firstItem="Ogd-n7-Unb" firstAttribute="top" secondItem="J3l-yr-kce" secondAttribute="bottom" constant="8" id="w7r-Bo-dEg"/>
-                            <constraint firstItem="7pD-Db-WnO" firstAttribute="top" secondItem="Ogd-n7-Unb" secondAttribute="bottom" constant="8" id="yqp-Jl-qQM"/>
                             <constraint firstItem="Ogd-n7-Unb" firstAttribute="leading" secondItem="pH7-or-PcD" secondAttribute="leadingMargin" constant="8" id="yzw-db-Ufl"/>
                         </constraints>
                         <connections>
@@ -175,6 +194,7 @@
                     </view>
                     <connections>
                         <outlet property="dateLabel" destination="A6O-nR-h31" id="jk9-Ss-CPS"/>
+                        <outlet property="imageView" destination="LNT-PW-rSv" id="lTG-dk-VdS"/>
                         <outlet property="nameLabel" destination="Hsw-jK-uCs" id="3ga-rh-dpz"/>
                         <outlet property="serialNumberField" destination="cUc-cR-Xpk" id="XNs-9g-gUL"/>
                         <outlet property="valueField" destination="IZn-4V-QdK" id="4Mv-Jk-w1P"/>

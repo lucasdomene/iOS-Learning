@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Item.swift
 //  Homepwner
 //
 //  Created by Lucas Domene Firmo on 9/6/16.
@@ -14,12 +14,14 @@ class Item: NSObject {
     var valueInDollars: Int
     var serialNumber: String?
     let dateCreated: NSDate
+    let itemKey: String
     
     init(name: String, serialNumber: String?, valueInDollars: Int) {
         self.name = name
         self.valueInDollars = valueInDollars
         self.serialNumber = serialNumber
         self.dateCreated = NSDate()
+        self.itemKey = NSUUID().UUIDString
         super.init()
     }
     

@@ -17,9 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         let itemStore = ItemStore()
+        let imageStore = ImageStore()
+        
         let navController = window!.rootViewController as! UINavigationController
         let itemsController = navController.topViewController as! ItemsViewController
+        
         itemsController.itemStore = itemStore
+        itemsController.imageStore = imageStore
         
         return true
     }
