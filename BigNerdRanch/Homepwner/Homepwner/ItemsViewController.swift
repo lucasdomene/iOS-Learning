@@ -23,6 +23,12 @@ class ItemsViewController: UITableViewController {
         tableView.estimatedRowHeight = 65
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemStore.allItems.count
     }
