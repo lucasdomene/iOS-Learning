@@ -13,13 +13,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="wiU-pq-EtO">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAW-gu-us1">
+                                    <rect key="frame" x="304" y="15" width="288" height="30"/>
+                                    <state key="normal" title="Add"/>
+                                    <connections>
+                                        <action selector="addNewItem:" destination="kcX-gG-upZ" eventType="touchUpInside" id="8uX-hw-pL2"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mn-CE-y0F">
+                                    <rect key="frame" x="8" y="15" width="288" height="30"/>
+                                    <state key="normal" title="Edit"/>
+                                    <connections>
+                                        <action selector="toggleEditingMode:" destination="kcX-gG-upZ" eventType="touchUpInside" id="5gY-17-TnP"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="zAW-gu-us1" firstAttribute="leading" secondItem="5mn-CE-y0F" secondAttribute="trailing" constant="8" id="Ifr-jF-Wrp"/>
+                                <constraint firstItem="zAW-gu-us1" firstAttribute="width" secondItem="5mn-CE-y0F" secondAttribute="width" id="NAs-8h-2Nx"/>
+                                <constraint firstItem="5mn-CE-y0F" firstAttribute="leading" secondItem="wiU-pq-EtO" secondAttribute="leading" constant="8" id="PXh-99-uBm"/>
+                                <constraint firstAttribute="trailing" secondItem="zAW-gu-us1" secondAttribute="trailing" constant="8" id="hGE-iw-fmj"/>
+                                <constraint firstItem="zAW-gu-us1" firstAttribute="centerY" secondItem="wiU-pq-EtO" secondAttribute="centerY" id="kxB-wl-lVp"/>
+                                <constraint firstItem="5mn-CE-y0F" firstAttribute="centerY" secondItem="wiU-pq-EtO" secondAttribute="centerY" id="uSm-mg-0lT"/>
+                            </constraints>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8mU-tG-hdU">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UITableViewCell" textLabel="7i6-fi-u6z" detailTextLabel="WhT-aU-ytU" style="IBUITableViewCellStyleValue1" id="8mU-tG-hdU">
+                                <rect key="frame" x="0.0" y="88" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8mU-tG-hdU" id="Fv3-b8-yhL">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7i6-fi-u6z">
+                                            <rect key="frame" x="15" y="12" width="31.5" height="19.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WhT-aU-ytU">
+                                            <rect key="frame" x="543.5" y="12" width="41.5" height="19.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
