@@ -14,4 +14,20 @@ class PhotosViewController: UIViewController {
     
     @IBOutlet var imageView: UIImageView!
     
+    // MARK: - Attributes
+    
+    var store: PhotoStore!
+    
+    // MARK: - View's Life Cycle
+    
+    override func viewDidLoad() {
+        store.fetchRecentPhotos { photosResult in
+            switch photosResult {
+            case let .Success(photos):
+                print("Successfully found \(photos.count) recent photos.")
+            case let .Failure(error):
+                print("Error fetching recent photos: \(error)")
+            }
+        }
+    }
 }
