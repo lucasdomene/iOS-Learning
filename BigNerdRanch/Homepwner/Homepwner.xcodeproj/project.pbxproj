@@ -64,19 +64,51 @@
 		A00087441D7F69460087CECC /* Homepwner */ = {
 			isa = PBXGroup;
 			children = (
-				A00087451D7F69460087CECC /* AppDelegate.swift */,
+				A03E558B1D87999A004CB247 /* Managers */,
+				A03E558A1D87995B004CB247 /* Models */,
+				A03E55891D879952004CB247 /* Views */,
+				A03E55881D87994C004CB247 /* ViewControllers */,
 				A00087491D7F69460087CECC /* Main.storyboard */,
 				A000874C1D7F69460087CECC /* Assets.xcassets */,
 				A000874E1D7F69460087CECC /* LaunchScreen.storyboard */,
 				A00087511D7F69460087CECC /* Info.plist */,
-				A00087571D7F69FE0087CECC /* ItemsViewController.swift */,
-				A00087591D7F6AA10087CECC /* Item.swift */,
-				A000875B1D7F6DFC0087CECC /* ItemStore.swift */,
-				A000875D1D808A760087CECC /* ItemCell.swift */,
-				A092498E1D809EEE0005A988 /* DetailViewController.swift */,
-				A06F1D851D80D2C1000986BA /* ImageStore.swift */,
 			);
 			path = Homepwner;
+			sourceTree = "<group>";
+		};
+		A03E55881D87994C004CB247 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A00087571D7F69FE0087CECC /* ItemsViewController.swift */,
+				A092498E1D809EEE0005A988 /* DetailViewController.swift */,
+				A00087451D7F69460087CECC /* AppDelegate.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A03E55891D879952004CB247 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A000875D1D808A760087CECC /* ItemCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		A03E558A1D87995B004CB247 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A00087591D7F6AA10087CECC /* Item.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		A03E558B1D87999A004CB247 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A000875B1D7F6DFC0087CECC /* ItemStore.swift */,
+				A06F1D851D80D2C1000986BA /* ImageStore.swift */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -10,13 +10,19 @@ import UIKit
 
 class ItemsViewController: UITableViewController {
     
+    // MARK: - Attributes
+    
     var itemStore: ItemStore!
     var imageStore: ImageStore!
+    
+    // MARK: - Init
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         navigationItem.leftBarButtonItem = editButtonItem()
     }
+    
+    // MARK: - View's Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +36,8 @@ class ItemsViewController: UITableViewController {
         
         tableView.reloadData()
     }
+    
+    // MARK: - UITableViewDataSource
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemStore.allItems.count
@@ -73,6 +81,8 @@ class ItemsViewController: UITableViewController {
         itemStore.moveItemAtIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
     }
     
+    // MARK: - @IBActions
+    
     @IBAction func addNewItem(sender: AnyObject) {
         let newItem = itemStore.createItem()
         
@@ -81,6 +91,8 @@ class ItemsViewController: UITableViewController {
             tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         }
     }
+    
+    // MARK: - Segues
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowItem" {

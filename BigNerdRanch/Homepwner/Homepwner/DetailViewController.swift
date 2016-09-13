@@ -10,11 +10,15 @@ import UIKit
 
 class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
+    // MARK: - @IBOutlets
+    
     @IBOutlet var nameLabel: UITextField!
     @IBOutlet var serialNumberField: UITextField!
     @IBOutlet var valueField: UITextField!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
+    
+    // MARK: - Attributes
     
     var item: Item! {
         didSet {
@@ -38,6 +42,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         formatter.timeStyle = .NoStyle
         return formatter
     }()
+    
+    // MARK: - View's Life Cycle
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -67,10 +73,14 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         }
     }
     
+    // MARK: - UITextFieldDelegate
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
+    
+    // MARK: - @IBActions
     
     @IBAction func backgroundTapped(sender: UITapGestureRecognizer) {
         view.endEditing(true)
@@ -89,6 +99,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         
         presentViewController(imagePicker, animated: true, completion: nil)
     }
+    
+    // MARK: - UIImagePickerControllerDelegate
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage

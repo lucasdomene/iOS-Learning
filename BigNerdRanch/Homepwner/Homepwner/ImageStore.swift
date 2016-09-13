@@ -10,7 +10,11 @@ import UIKit
 
 class ImageStore: NSObject {
     
+    // MARK: - Attributes
+    
     let cache = NSCache()
+    
+    // MARK: - Instance Methods
     
     func setImage(image: UIImage, forkey key: String) {
         cache.setObject(image, forKey: key)

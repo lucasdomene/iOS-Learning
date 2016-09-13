@@ -10,9 +10,13 @@ import UIKit
 
 class ItemCell: UITableViewCell {
     
+    // MARK: - @IBOutlets
+    
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var serialNumberLabel: UILabel!
     @IBOutlet var valueLabel: UILabel!
+    
+    // MARK: - Instance Methods
     
     func updateLabels() {
         let bodyFont = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)

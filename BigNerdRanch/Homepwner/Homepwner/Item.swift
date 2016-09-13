@@ -10,11 +10,15 @@ import UIKit
 
 class Item: NSObject, NSCoding {
     
+    // MARK: - Attributes
+    
     var name: String
     var valueInDollars: Int
     var serialNumber: String?
     let dateCreated: NSDate
     let itemKey: String
+    
+    // MARK: - Init
     
     init(name: String, serialNumber: String?, valueInDollars: Int) {
         self.name = name
