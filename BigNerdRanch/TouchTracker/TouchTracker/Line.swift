@@ -10,6 +10,9 @@ import Foundation
 import CoreGraphics
 
 struct Line {
+    
+    // MARK: - Attributes
+    
     var begin = CGPoint.zero
     var end = CGPoint.zero
 }

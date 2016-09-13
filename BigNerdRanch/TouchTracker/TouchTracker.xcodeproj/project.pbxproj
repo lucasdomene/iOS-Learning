@@ -58,16 +58,40 @@
 		A03E554A1D874EDC004CB247 /* TouchTracker */ = {
 			isa = PBXGroup;
 			children = (
-				A03E554B1D874EDC004CB247 /* AppDelegate.swift */,
-				A03E554D1D874EDC004CB247 /* ViewController.swift */,
+				A03E55871D8797EB004CB247 /* Views */,
+				A03E55861D8797DF004CB247 /* ViewControllers */,
+				A03E55851D8797D3004CB247 /* Models */,
 				A03E554F1D874EDC004CB247 /* Main.storyboard */,
 				A03E55521D874EDC004CB247 /* Assets.xcassets */,
 				A03E55541D874EDC004CB247 /* LaunchScreen.storyboard */,
 				A03E55571D874EDC004CB247 /* Info.plist */,
-				A03E555D1D874F70004CB247 /* Line.swift */,
-				A03E555F1D875022004CB247 /* DrawView.swift */,
 			);
 			path = TouchTracker;
+			sourceTree = "<group>";
+		};
+		A03E55851D8797D3004CB247 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A03E555D1D874F70004CB247 /* Line.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		A03E55861D8797DF004CB247 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A03E554D1D874EDC004CB247 /* ViewController.swift */,
+				A03E554B1D874EDC004CB247 /* AppDelegate.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A03E55871D8797EB004CB247 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A03E555F1D875022004CB247 /* DrawView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +321,7 @@
 				A03E555C1D874EDC004CB247 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

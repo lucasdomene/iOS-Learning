@@ -10,8 +10,11 @@ import UIKit
 
 class DrawView: UIView, UIGestureRecognizerDelegate {
     
+    // MARK: - Attributes
+    
     var currentLines = [NSValue: Line]()
     var finishedLines = [Line]()
+    var moveRecognizer: UIPanGestureRecognizer!
     var selectedLineIndex: Int? {
         didSet {
             if selectedLineIndex == nil {
@@ -20,7 +23,8 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
             }
         }
     }
-    var moveRecognizer: UIPanGestureRecognizer!
+    
+    // MARK: - @IBInspectable
     
     @IBInspectable var finishedLineColor: UIColor = UIColor.blackColor() {
         didSet {
@@ -39,6 +43,8 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
             setNeedsDisplay()
         }
     }
+    
+    // MARK: - Init
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -61,6 +67,8 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
         moveRecognizer.cancelsTouchesInView = false
         addGestureRecognizer(moveRecognizer)
     }
+    
+     // MARK: - Instance Methods
     
     func strokeLine(line: Line) {
         let path = UIBezierPath()
@@ -90,6 +98,14 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
         return nil
     }
     
+    func deleteLine(sender: AnyObject) {
+        if let index = selectedLineIndex {
+            finishedLines.removeAtIndex(index)
+            selectedLineIndex = nil
+            setNeedsDisplay()
+        }
+    }
+    
     override func drawRect(rect: CGRect) {
         finishedLineColor.setStroke()
         for line in finishedLines {
@@ -107,6 +123,12 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
             strokeLine(selectedLine)
         }
     }
+    
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    
+     // MARK: - Touches
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch in touches {
@@ -145,6 +167,8 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
         currentLines.removeAll()
         setNeedsDisplay()
     }
+    
+     // MARK: - Gestures
     
     func doubleTap(gestureRecognizer: UIGestureRecognizer) {
         selectedLineIndex = nil
@@ -208,17 +232,7 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
         }
     }
     
-    override func canBecomeFirstResponder() -> Bool {
-        return true
-    }
-    
-    func deleteLine(sender: AnyObject) {
-        if let index = selectedLineIndex {
-            finishedLines.removeAtIndex(index)
-            selectedLineIndex = nil
-            setNeedsDisplay()
-        }
-    }
+    // MARK: - UIGestureRecognizerDelegate
     
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
