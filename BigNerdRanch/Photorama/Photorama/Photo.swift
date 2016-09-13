@@ -6,7 +6,7 @@
 //  Copyright © 2016 Domene. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Photo {
     
@@ -16,6 +16,7 @@ class Photo {
     let remoteURL: NSURL
     let photoID: String
     let dateTaken: NSDate
+    var image: UIImage?
     
     // MARK: - Init
     
