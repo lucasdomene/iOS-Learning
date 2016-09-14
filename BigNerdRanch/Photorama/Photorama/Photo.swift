@@ -2,34 +2,36 @@
 //  Photo.swift
 //  Photorama
 //
-//  Created by Lucas Domene Firmo on 9/12/16.
+//  Created by Lucas Domene Firmo on 9/13/16.
 //  Copyright © 2016 Domene. All rights reserved.
 //
 
 import UIKit
+import CoreData
 
-class Photo {
-    
-    // MARK: - Attributes
-    
-    let title: String
-    let remoteURL: NSURL
-    let photoID: String
-    let dateTaken: NSDate
+
+class Photo: NSManagedObject {
+
     var image: UIImage?
     
-    // MARK: - Init
-    
-    init(title: String, photoID: String, remoteURL: NSURL, dateTaken: NSDate) {
-        self.title = title
-        self.remoteURL = remoteURL
-        self.photoID = photoID
-        self.dateTaken = dateTaken
+    override func awakeFromInsert() {
+        super.awakeFromInsert()
+        
+        title = ""
+        photoID = ""
+        remoteURL = NSURL()
+        photoKey = NSUUID().UUIDString
+        dateTaken = NSDate()
     }
-}
+    
+    func addTagObject(tag: NSManagedObject) {
+        let currentTags = mutableSetValueForKey("tags")
+        currentTags.addObject(tag)
+    }
+    
+    func removeTagObject(tag: NSManagedObject) {
+        let currentTags = mutableSetValueForKey("tags")
+        currentTags.removeObject(tag)
+    }
 
-extension Photo: Equatable {}
-
-func == (lhs: Photo, rhs: Photo) -> Bool {
-    return lhs.photoID == rhs.photoID
 }
