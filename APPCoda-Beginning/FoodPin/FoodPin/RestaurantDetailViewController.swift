@@ -18,6 +18,9 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.estimatedRowHeight = 36.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         // Do any additional setup after loading the view.
         restaurantImageView.image = UIImage(named: restaurant.image)
         
