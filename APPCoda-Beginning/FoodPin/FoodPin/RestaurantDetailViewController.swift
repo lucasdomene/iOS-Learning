@@ -9,9 +9,11 @@
 import UIKit
 
 class RestaurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet var restaurantImageView:UIImageView!
     
+    @IBOutlet var restaurantImageView:UIImageView!
     @IBOutlet var tableView:UITableView!
+    @IBOutlet var ratingButton: UIButton!
+    
     
     var restaurant:Restaurant!
 
@@ -84,15 +86,12 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         return cell
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func close(segue: UIStoryboardSegue) {
+        if let reviewViewController = segue.sourceViewController as? ReviewViewController {
+            if let rating = reviewViewController.rating {
+                ratingButton.setImage(UIImage(named: rating), forState: .Normal)
+            }
+        }
     }
-    */
 
 }
