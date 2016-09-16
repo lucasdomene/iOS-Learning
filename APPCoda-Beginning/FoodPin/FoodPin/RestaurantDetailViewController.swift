@@ -9,20 +9,17 @@
 import UIKit
 
 class RestaurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
     @IBOutlet var restaurantImageView:UIImageView!
-    @IBOutlet var tableView:UITableView!
-    @IBOutlet var ratingButton: UIButton!
     
+    @IBOutlet var tableView:UITableView!
+    
+    @IBOutlet var ratingButton:UIButton!
     
     var restaurant:Restaurant!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.estimatedRowHeight = 36.0
-        tableView.rowHeight = UITableViewAutomaticDimension
-        
         // Do any additional setup after loading the view.
         restaurantImageView.image = UIImage(named: restaurant.image)
         
@@ -37,6 +34,15 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         
         // Set the title of the navigation bar
         title = restaurant.name
+        
+        // Enable self sizing cells
+        tableView.estimatedRowHeight = 36.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+
+        // Set the rating of the restaurant
+        if restaurant.rating != "" {
+            ratingButton.setImage(UIImage(named: restaurant.rating), forState: UIControlState.Normal)
+        }
         
     }
 
@@ -86,19 +92,26 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         return cell
     }
     
-    @IBAction func close(segue: UIStoryboardSegue) {
+
+    @IBAction func close(segue:UIStoryboardSegue) {
         if let reviewViewController = segue.sourceViewController as? ReviewViewController {
             if let rating = reviewViewController.rating {
-                ratingButton.setImage(UIImage(named: rating), forState: .Normal)
+                restaurant.rating = rating
+                ratingButton.setImage(UIImage(named: rating), forState: UIControlState.Normal)
             }
         }
     }
     
+    
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showMap" {
-            let destinationViewController = segue.destinationViewController as! MapViewController
-            destinationViewController.restaurant = restaurant
+            let destinationController = segue.destinationViewController as! MapViewController
+            destinationController.restaurant = restaurant
         }
     }
+    
 
 }
