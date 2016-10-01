@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ScrollableTabBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ITo-AV-2Dl">
+                                <rect key="frame" x="0.0" y="20" width="600" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Pr-7J-UGO">
+                                        <rect key="frame" x="275" y="3" width="49" height="34"/>
+                                        <state key="normal" title="Home">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="customBarItemPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CAN-3D-cye"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H73-Yq-eb3">
+                                        <rect key="frame" x="40" y="3" width="67" height="34"/>
+                                        <state key="normal" title="Settings">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="customBarItemPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j47-O9-A2X"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBc-rR-2q4">
+                                        <rect key="frame" x="467" y="3" width="93" height="34"/>
+                                        <state key="normal" title="Promotions">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="customBarItemPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y5t-wU-Vpr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="KBc-rR-2q4" firstAttribute="centerY" secondItem="ITo-AV-2Dl" secondAttribute="centerY" id="3XK-RF-W2k"/>
+                                    <constraint firstItem="H73-Yq-eb3" firstAttribute="centerY" secondItem="ITo-AV-2Dl" secondAttribute="centerY" id="F0w-y6-8ib"/>
+                                    <constraint firstItem="9Pr-7J-UGO" firstAttribute="centerX" secondItem="ITo-AV-2Dl" secondAttribute="centerX" id="IUz-wq-I4n"/>
+                                    <constraint firstItem="H73-Yq-eb3" firstAttribute="leading" secondItem="ITo-AV-2Dl" secondAttribute="leading" constant="40" id="WaY-RF-oPH"/>
+                                    <constraint firstAttribute="trailing" secondItem="KBc-rR-2q4" secondAttribute="trailing" constant="40" id="Ywy-Kl-aa8"/>
+                                    <constraint firstAttribute="height" constant="40" id="ajz-g2-MIB"/>
+                                    <constraint firstItem="9Pr-7J-UGO" firstAttribute="centerY" secondItem="ITo-AV-2Dl" secondAttribute="centerY" id="ub0-qL-Za3"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ITo-AV-2Dl" secondAttribute="trailing" constant="-20" id="04Z-5J-ZL2"/>
+                            <constraint firstItem="ITo-AV-2Dl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="B0V-Bx-QcE"/>
+                            <constraint firstItem="ITo-AV-2Dl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="UA1-Mf-chS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="customBar" destination="ITo-AV-2Dl" id="tjW-ou-7RF"/>
+                        <outlet property="homeBarItem" destination="9Pr-7J-UGO" id="69h-fI-mSp"/>
+                        <outlet property="promotionsBarItem" destination="KBc-rR-2q4" id="agC-AS-k7H"/>
+                        <outlet property="settingsBarItem" destination="H73-Yq-eb3" id="mtL-iG-ePP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="459" y="374"/>
+        </scene>
+    </scenes>
+</document>
