@@ -64,7 +64,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         let hasViewedWalkthrough = defaults.boolForKey("hasViewedWalkthrough")
         
         if hasViewedWalkthrough {
-            returng
+            return
         }
         
         if let pageViewController = storyboard?.instantiateViewControllerWithIdentifier("WalkthroughController") as? WalkthroughPageViewController {
