@@ -40,7 +40,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SG3-qw-aHA">
-                                <rect key="frame" x="275" y="519" width="50" height="34"/>
+                                <rect key="frame" x="275" y="536" width="50" height="34"/>
                                 <state key="normal" title="DONE"/>
                                 <connections>
                                     <action selector="doneButtonPressed:" destination="20I-UW-nq4" eventType="touchUpInside" id="IPs-mA-rhz"/>
@@ -60,11 +60,13 @@
                             <constraint firstItem="5Ar-tn-w1v" firstAttribute="top" secondItem="PMR-Pz-l0P" secondAttribute="bottom" constant="8" id="oO4-wi-QAm"/>
                             <constraint firstItem="Mvg-FV-DSh" firstAttribute="top" secondItem="Bz9-tc-aTN" secondAttribute="bottom" constant="8" id="qya-fq-0KM"/>
                             <constraint firstItem="5Ar-tn-w1v" firstAttribute="centerX" secondItem="s2I-SP-5PF" secondAttribute="centerX" id="rys-ab-fJw"/>
-                            <constraint firstItem="SG3-qw-aHA" firstAttribute="top" secondItem="5Ar-tn-w1v" secondAttribute="bottom" constant="7.5" id="zon-SO-OSN"/>
+                            <constraint firstItem="tfs-7f-Ii2" firstAttribute="top" secondItem="SG3-qw-aHA" secondAttribute="bottom" constant="30" id="uSr-Td-5yi"/>
+                            <constraint firstItem="SG3-qw-aHA" firstAttribute="top" secondItem="5Ar-tn-w1v" secondAttribute="bottom" constant="8" id="zon-SO-OSN"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="kGA-jl-svH"/>
+                                <exclude reference="zon-SO-OSN"/>
                             </mask>
                         </variation>
                     </view>

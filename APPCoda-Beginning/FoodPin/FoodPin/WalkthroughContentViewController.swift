@@ -35,6 +35,8 @@ class WalkthroughContentViewController: UIViewController {
     }
     
     @IBAction func doneButtonPressed(sender: UIButton) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setBool(true, forKey: "hasViewedWalkthrough")
         dismissViewControllerAnimated(true, completion: nil)
     }
     
