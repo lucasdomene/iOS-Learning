@@ -13,6 +13,7 @@ class WalkthroughContentViewController: UIViewController {
     @IBOutlet var headingLabel: UILabel!
     @IBOutlet var contentLabel: UILabel!
     @IBOutlet var contentImageView: UIImageView!
+    @IBOutlet var doneButton: UIButton!
     
     var index = 0
     var heading = ""
@@ -25,6 +26,16 @@ class WalkthroughContentViewController: UIViewController {
         headingLabel.text = heading
         contentLabel.text = content
         contentImageView.image = UIImage(named: imageFile)
+        
+        if index == 2 {
+            doneButton.hidden = false
+        } else {
+            doneButton.hidden = true
+        }
+    }
+    
+    @IBAction func doneButtonPressed(sender: UIButton) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
 }
