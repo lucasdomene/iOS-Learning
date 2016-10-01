@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     var selectionViewCenterConstraint: NSLayoutConstraint!
     var selectionView: UIView!
     
-    var selectedIndex: Int!
+    var selectedIndex: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,21 +33,25 @@ class ViewController: UIViewController {
         selectionView.bottomAnchor.constraintEqualToAnchor(customBar.bottomAnchor, constant: 0.0).active = true
         addNewSelectionViewContraintsRelatedToButton(homeBarItem)
         
-        selectedIndex = 1
-        changeButtonColor(selectedIndex)
+        changeButtonColor(homeBarItem.tag)
+        selectedIndex = homeBarItem.tag
     }
 
     @IBAction func customBarItemPressed(sender: UIButton) {
         print("Selected Button Tag: \(sender.tag)")
         switch sender.tag {
-        case 0:
-            addNewSelectionViewContraintsRelatedToButton(settingsBarItem)
         case 1:
-            addNewSelectionViewContraintsRelatedToButton(homeBarItem)
-            break;
+            addNewSelectionViewContraintsRelatedToButton(settingsBarItem)
+            changeButtonColor(settingsBarItem.tag)
+            selectedIndex = settingsBarItem.tag
         case 2:
+            addNewSelectionViewContraintsRelatedToButton(homeBarItem)
+            changeButtonColor(homeBarItem.tag)
+            selectedIndex = homeBarItem.tag
+        case 3:
             addNewSelectionViewContraintsRelatedToButton(promotionsBarItem)
-            break;
+            changeButtonColor(promotionsBarItem.tag)
+            selectedIndex = promotionsBarItem.tag
         default:
             break;
         }
@@ -66,7 +70,17 @@ class ViewController: UIViewController {
     }
     
     func changeButtonColor(index: Int) {
+        if index == selectedIndex {
+            return
+        }
         
+        if selectedIndex != nil {
+            let previousSelectedButton = customBar.viewWithTag(selectedIndex!) as? UIButton
+            previousSelectedButton?.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
+        }
+        
+        let selectedButton = customBar.viewWithTag(index) as? UIButton
+        selectedButton?.setTitleColor(UIColor.greenColor(), forState: .Normal)
     }
     
 }
