@@ -66,6 +66,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Change the status bar's appearance
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
+        UITabBar.appearance().selectionIndicatorImage = UIImage(named: "tabitem-selected")
+        UITabBar.appearance().tintColor = UIColor.whiteColor()
+        
         return true
     }
 
