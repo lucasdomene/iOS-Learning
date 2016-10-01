@@ -4,10 +4,71 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--Walkthrough Content View Controller-->
+        <scene sceneID="X5F-Q0-Z8a">
+            <objects>
+                <viewController storyboardIdentifier="WalkthroughContentViewController" id="20I-UW-nq4" customClass="WalkthroughContentViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bz9-tc-aTN"/>
+                        <viewControllerLayoutGuide type="bottom" id="tfs-7f-Ii2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="s2I-SP-5PF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personalize" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mvg-FV-DSh">
+                                <rect key="frame" x="249" y="28" width="101.5" height="26"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PMR-Pz-l0P">
+                                <rect key="frame" x="30" y="62" width="540" height="418"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PMR-Pz-l0P" secondAttribute="height" multiplier="270:209" id="qbP-8C-Wef"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pin your favorite restaurants and create your own food guide." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ar-tn-w1v">
+                                <rect key="frame" x="70" y="488" width="460" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Mvg-FV-DSh" firstAttribute="centerX" secondItem="s2I-SP-5PF" secondAttribute="centerX" id="BQH-vw-IwB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5Ar-tn-w1v" secondAttribute="trailing" constant="50" id="EGw-p3-ukr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PMR-Pz-l0P" secondAttribute="trailing" constant="10" id="PtA-9b-XCY"/>
+                            <constraint firstItem="5Ar-tn-w1v" firstAttribute="leading" secondItem="s2I-SP-5PF" secondAttribute="leadingMargin" constant="50" id="cLc-m1-fwa"/>
+                            <constraint firstItem="PMR-Pz-l0P" firstAttribute="leading" secondItem="s2I-SP-5PF" secondAttribute="leadingMargin" constant="10" id="d4f-ja-jIj"/>
+                            <constraint firstItem="5Ar-tn-w1v" firstAttribute="top" secondItem="PMR-Pz-l0P" secondAttribute="bottom" constant="8" id="kGA-jl-svH"/>
+                            <constraint firstItem="PMR-Pz-l0P" firstAttribute="top" secondItem="Mvg-FV-DSh" secondAttribute="bottom" constant="8" id="ljD-O3-oav"/>
+                            <constraint firstItem="5Ar-tn-w1v" firstAttribute="top" secondItem="PMR-Pz-l0P" secondAttribute="bottom" constant="8" id="oO4-wi-QAm"/>
+                            <constraint firstItem="Mvg-FV-DSh" firstAttribute="top" secondItem="Bz9-tc-aTN" secondAttribute="bottom" constant="8" id="qya-fq-0KM"/>
+                            <constraint firstItem="5Ar-tn-w1v" firstAttribute="centerX" secondItem="s2I-SP-5PF" secondAttribute="centerX" id="rys-ab-fJw"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="kGA-jl-svH"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="contentImageView" destination="PMR-Pz-l0P" id="s64-Rv-QtV"/>
+                        <outlet property="contentLabel" destination="5Ar-tn-w1v" id="pgX-Xy-FFo"/>
+                        <outlet property="headingLabel" destination="Mvg-FV-DSh" id="6MP-tE-MEp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bUH-bN-67g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1797" y="-1049"/>
+        </scene>
         <!--New Restaurant-->
         <scene sceneID="QG7-mm-8cx">
             <objects>
@@ -620,6 +681,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ji-xH-yxS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="393" y="341"/>
+        </scene>
+        <!--Walkthrough Page View Controller-->
+        <scene sceneID="DT3-54-JIc">
+            <objects>
+                <pageViewController storyboardIdentifier="WalkthroughController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="skR-Fc-FWz" customClass="WalkthroughPageViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0W4-b1-Mli" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1094" y="-1044"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7N4-F1-rTo">
