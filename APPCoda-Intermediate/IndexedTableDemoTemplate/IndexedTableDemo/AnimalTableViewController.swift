@@ -54,6 +54,10 @@ class AnimalTableViewController: UITableViewController {
         return animalSectionTitles[section]
     }
     
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return animalSectionTitles
+    }
+    
     // Helper Methods
     
     func createAnimalDict() {
