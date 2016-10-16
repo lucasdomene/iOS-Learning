@@ -15,6 +15,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     var restaurant:Restaurant!
     let locationManager = CLLocationManager()
+    var currentPlacemark: CLPlacemark?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             if let placemarks = placemarks {
                 // Get the first placemark
                 let placemark = placemarks[0]
+                self.currentPlacemark = placemark
                 
                 // Add annotation
                 let annotation = MKPointAnnotation()
@@ -60,7 +62,29 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     // Route
     
     @IBAction func showDirection(sender: AnyObject) {
+        guard let currentPlacemark = currentPlacemark else {
+            return
+        }
         
+        let directionRequest = MKDirectionsRequest()
+        directionRequest.source = MKMapItem.forCurrentLocation()
+        let destinationPlacemark = MKPlacemark(placemark: currentPlacemark)
+        directionRequest.destination = MKMapItem(placemark: destinationPlacemark)
+        directionRequest.transportType = .automobile
+        
+        let directions = MKDirections(request: directionRequest)
+        directions.calculate { (routeResponse, error) in
+            guard let routeResponse = routeResponse else {
+                if let error = error {
+                    print("Error: \(error)")
+                }
+                
+                return
+            }
+            
+            let route = routeResponse.routes[0]
+            self.mapView.add(route.polyline, level: .aboveRoads)
+        }
     }
     
     // MKMapViewDelegate
@@ -90,6 +114,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }
         
         return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(overlay: overlay)
+        renderer.strokeColor = UIColor.blue
+        renderer.lineWidth = 3.0
+        return renderer
     }
     
 }
