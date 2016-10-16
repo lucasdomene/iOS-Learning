@@ -17,35 +17,41 @@ class AnimalTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createAnimalDict()
-        print(animalSectionTitles)
-        print(animalDict)
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // Return the number of sections.
-        return 1
+        return animalSectionTitles.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // Return the number of rows in the section.
-        return animals.count
+        let animalKey = animalSectionTitles[section]
+        if let animalValue = animalDict[animalKey] {
+            return animalValue.count
+        }
+        return 0
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) 
 
         // Configure the cell...
-        cell.textLabel?.text = animals[(indexPath as NSIndexPath).row]
-        
-        // Convert the animal name to lower case and 
-        // then replace all occurences of a space with an underscore
-        let imageFilename = animals[(indexPath as NSIndexPath).row].lowercased().replacingOccurrences(of: " ", with: "_", options: [], range: nil)
-        cell.imageView?.image = UIImage(named: imageFilename)
-
+        let animalKey = animalSectionTitles[indexPath.section]
+        if let animalValues = animalDict[animalKey] {
+            cell.textLabel?.text = animalValues[indexPath.row]
+            
+            // Convert the animal name to lower case and
+            // then replace all occurences of a space with an underscore
+            let imageFilename = animalValues[indexPath.row].lowercased().replacingOccurrences(of: " ", with: "_", options: [], range: nil)
+            cell.imageView?.image = UIImage(named: imageFilename)
+        }
+    
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return animalSectionTitles[section]
     }
     
     // Helper Methods
@@ -65,7 +71,7 @@ class AnimalTableViewController: UITableViewController {
         }
         
         animalSectionTitles = [String](animalDict.keys)
-        animalSectionTitles = animalSectionTitles.sorted(by: { $0 > $1 })
+        animalSectionTitles = animalSectionTitles.sorted(by: { $0 < $1 })
     }
     
 
