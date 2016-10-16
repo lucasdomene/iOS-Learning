@@ -129,7 +129,20 @@ class RestaurantTableViewController: UITableViewController {
                 tweetComposer.add(UIImage(named: self.restaurantNames[indexPath.row]))
                 self.present(tweetComposer, animated: true, completion: nil)
             })
-            let facebookAction = UIAlertAction(title: "Facebook", style: UIAlertActionStyle.default, handler: nil)
+            let facebookAction = UIAlertAction(title: "Facebook", style: UIAlertActionStyle.default, handler: { action -> Void in
+                guard SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook) else {
+                    let alertMessage = UIAlertController(title: "Facebook Unavailable", message: "You haven't registered your Facebook account. Please go to Settings > Facebook to create one.", preferredStyle: .alert)
+                    alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alertMessage, animated: true, completion: nil)
+                    return
+                }
+                
+                let facebookComposer = SLComposeViewController(forServiceType: SLServiceTypeFacebook)!
+                facebookComposer.setInitialText(self.restaurantNames[indexPath.row])
+                facebookComposer.add(UIImage(named: self.restaurantNames[indexPath.row]))
+                facebookComposer.add(URL(string: "http://www.appcoda.com"))
+                self.present(facebookComposer, animated: true, completion: nil)
+            })
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
             
             shareMenu.addAction(twitterAction)
