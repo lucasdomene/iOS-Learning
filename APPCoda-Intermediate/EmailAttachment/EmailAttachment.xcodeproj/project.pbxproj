@@ -1,0 +1,461 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F4C814BE1A1ED66C0004C3A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C814BD1A1ED66C0004C3A9 /* AppDelegate.swift */; };
+		F4C814C31A1ED66C0004C3A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4C814C11A1ED66C0004C3A9 /* Main.storyboard */; };
+		F4C814C51A1ED66C0004C3A9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4C814C41A1ED66C0004C3A9 /* Images.xcassets */; };
+		F4C814C81A1ED66C0004C3A9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C814C61A1ED66C0004C3A9 /* LaunchScreen.xib */; };
+		F4C814D41A1ED66C0004C3A9 /* EmailAttachmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C814D31A1ED66C0004C3A9 /* EmailAttachmentTests.swift */; };
+		F4C814E21A1EE9F80004C3A9 /* 10 Great iPhone Tips.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F4C814DE1A1EE9F80004C3A9 /* 10 Great iPhone Tips.pdf */; };
+		F4C814E31A1EE9F80004C3A9 /* camera-photo-tips.html in Resources */ = {isa = PBXBuildFile; fileRef = F4C814DF1A1EE9F80004C3A9 /* camera-photo-tips.html */; };
+		F4C814E41A1EE9F80004C3A9 /* Hello World.ppt in Resources */ = {isa = PBXBuildFile; fileRef = F4C814E01A1EE9F80004C3A9 /* Hello World.ppt */; };
+		F4C814E51A1EE9F80004C3A9 /* Why Appcoda.doc in Resources */ = {isa = PBXBuildFile; fileRef = F4C814E11A1EE9F80004C3A9 /* Why Appcoda.doc */; };
+		F4C814E71A1EEA2F0004C3A9 /* AttachmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C814E61A1EEA2F0004C3A9 /* AttachmentTableViewController.swift */; };
+		F4C814F61A1F39040004C3A9 /* foggy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F4C814F41A1F39040004C3A9 /* foggy.jpg */; };
+		F4C814F71A1F39040004C3A9 /* no more complaint.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C814F51A1F39040004C3A9 /* no more complaint.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F4C814CE1A1ED66C0004C3A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4C814B01A1ED66C0004C3A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4C814B71A1ED66C0004C3A9;
+			remoteInfo = EmailAttachment;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F4C814B81A1ED66C0004C3A9 /* EmailAttachment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmailAttachment.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4C814BC1A1ED66C0004C3A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4C814BD1A1ED66C0004C3A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F4C814C21A1ED66C0004C3A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F4C814C41A1ED66C0004C3A9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F4C814C71A1ED66C0004C3A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F4C814CD1A1ED66C0004C3A9 /* EmailAttachmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmailAttachmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4C814D21A1ED66C0004C3A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4C814D31A1ED66C0004C3A9 /* EmailAttachmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAttachmentTests.swift; sourceTree = "<group>"; };
+		F4C814DE1A1EE9F80004C3A9 /* 10 Great iPhone Tips.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "10 Great iPhone Tips.pdf"; sourceTree = "<group>"; };
+		F4C814DF1A1EE9F80004C3A9 /* camera-photo-tips.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "camera-photo-tips.html"; sourceTree = "<group>"; };
+		F4C814E01A1EE9F80004C3A9 /* Hello World.ppt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hello World.ppt"; sourceTree = "<group>"; };
+		F4C814E11A1EE9F80004C3A9 /* Why Appcoda.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Why Appcoda.doc"; sourceTree = "<group>"; };
+		F4C814E61A1EEA2F0004C3A9 /* AttachmentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentTableViewController.swift; sourceTree = "<group>"; };
+		F4C814F41A1F39040004C3A9 /* foggy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = foggy.jpg; sourceTree = "<group>"; };
+		F4C814F51A1F39040004C3A9 /* no more complaint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no more complaint.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F4C814B51A1ED66C0004C3A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4C814CA1A1ED66C0004C3A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F4C814AF1A1ED66C0004C3A9 = {
+			isa = PBXGroup;
+			children = (
+				F4C814BA1A1ED66C0004C3A9 /* EmailAttachment */,
+				F4C814D01A1ED66C0004C3A9 /* EmailAttachmentTests */,
+				F4C814B91A1ED66C0004C3A9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F4C814B91A1ED66C0004C3A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4C814B81A1ED66C0004C3A9 /* EmailAttachment.app */,
+				F4C814CD1A1ED66C0004C3A9 /* EmailAttachmentTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4C814BA1A1ED66C0004C3A9 /* EmailAttachment */ = {
+			isa = PBXGroup;
+			children = (
+				F4C814DD1A1EE9E20004C3A9 /* attachments */,
+				F4C814BD1A1ED66C0004C3A9 /* AppDelegate.swift */,
+				F4C814C11A1ED66C0004C3A9 /* Main.storyboard */,
+				F4C814C41A1ED66C0004C3A9 /* Images.xcassets */,
+				F4C814C61A1ED66C0004C3A9 /* LaunchScreen.xib */,
+				F4C814BB1A1ED66C0004C3A9 /* Supporting Files */,
+				F4C814E61A1EEA2F0004C3A9 /* AttachmentTableViewController.swift */,
+			);
+			path = EmailAttachment;
+			sourceTree = "<group>";
+		};
+		F4C814BB1A1ED66C0004C3A9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F4C814BC1A1ED66C0004C3A9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F4C814D01A1ED66C0004C3A9 /* EmailAttachmentTests */ = {
+			isa = PBXGroup;
+			children = (
+				F4C814D31A1ED66C0004C3A9 /* EmailAttachmentTests.swift */,
+				F4C814D11A1ED66C0004C3A9 /* Supporting Files */,
+			);
+			path = EmailAttachmentTests;
+			sourceTree = "<group>";
+		};
+		F4C814D11A1ED66C0004C3A9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F4C814D21A1ED66C0004C3A9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F4C814DD1A1EE9E20004C3A9 /* attachments */ = {
+			isa = PBXGroup;
+			children = (
+				F4C814DE1A1EE9F80004C3A9 /* 10 Great iPhone Tips.pdf */,
+				F4C814F41A1F39040004C3A9 /* foggy.jpg */,
+				F4C814F51A1F39040004C3A9 /* no more complaint.png */,
+				F4C814DF1A1EE9F80004C3A9 /* camera-photo-tips.html */,
+				F4C814E01A1EE9F80004C3A9 /* Hello World.ppt */,
+				F4C814E11A1EE9F80004C3A9 /* Why Appcoda.doc */,
+			);
+			name = attachments;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F4C814B71A1ED66C0004C3A9 /* EmailAttachment */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4C814D71A1ED66C0004C3A9 /* Build configuration list for PBXNativeTarget "EmailAttachment" */;
+			buildPhases = (
+				F4C814B41A1ED66C0004C3A9 /* Sources */,
+				F4C814B51A1ED66C0004C3A9 /* Frameworks */,
+				F4C814B61A1ED66C0004C3A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EmailAttachment;
+			productName = EmailAttachment;
+			productReference = F4C814B81A1ED66C0004C3A9 /* EmailAttachment.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F4C814CC1A1ED66C0004C3A9 /* EmailAttachmentTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4C814DA1A1ED66C0004C3A9 /* Build configuration list for PBXNativeTarget "EmailAttachmentTests" */;
+			buildPhases = (
+				F4C814C91A1ED66C0004C3A9 /* Sources */,
+				F4C814CA1A1ED66C0004C3A9 /* Frameworks */,
+				F4C814CB1A1ED66C0004C3A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F4C814CF1A1ED66C0004C3A9 /* PBXTargetDependency */,
+			);
+			name = EmailAttachmentTests;
+			productName = EmailAttachmentTests;
+			productReference = F4C814CD1A1ED66C0004C3A9 /* EmailAttachmentTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F4C814B01A1ED66C0004C3A9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = AppCoda;
+				TargetAttributes = {
+					F4C814B71A1ED66C0004C3A9 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					F4C814CC1A1ED66C0004C3A9 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = F4C814B71A1ED66C0004C3A9;
+					};
+				};
+			};
+			buildConfigurationList = F4C814B31A1ED66C0004C3A9 /* Build configuration list for PBXProject "EmailAttachment" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F4C814AF1A1ED66C0004C3A9;
+			productRefGroup = F4C814B91A1ED66C0004C3A9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F4C814B71A1ED66C0004C3A9 /* EmailAttachment */,
+				F4C814CC1A1ED66C0004C3A9 /* EmailAttachmentTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F4C814B61A1ED66C0004C3A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4C814C31A1ED66C0004C3A9 /* Main.storyboard in Resources */,
+				F4C814E51A1EE9F80004C3A9 /* Why Appcoda.doc in Resources */,
+				F4C814C81A1ED66C0004C3A9 /* LaunchScreen.xib in Resources */,
+				F4C814C51A1ED66C0004C3A9 /* Images.xcassets in Resources */,
+				F4C814F61A1F39040004C3A9 /* foggy.jpg in Resources */,
+				F4C814E41A1EE9F80004C3A9 /* Hello World.ppt in Resources */,
+				F4C814E21A1EE9F80004C3A9 /* 10 Great iPhone Tips.pdf in Resources */,
+				F4C814E31A1EE9F80004C3A9 /* camera-photo-tips.html in Resources */,
+				F4C814F71A1F39040004C3A9 /* no more complaint.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4C814CB1A1ED66C0004C3A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F4C814B41A1ED66C0004C3A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4C814E71A1EEA2F0004C3A9 /* AttachmentTableViewController.swift in Sources */,
+				F4C814BE1A1ED66C0004C3A9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4C814C91A1ED66C0004C3A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4C814D41A1ED66C0004C3A9 /* EmailAttachmentTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F4C814CF1A1ED66C0004C3A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F4C814B71A1ED66C0004C3A9 /* EmailAttachment */;
+			targetProxy = F4C814CE1A1ED66C0004C3A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F4C814C11A1ED66C0004C3A9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4C814C21A1ED66C0004C3A9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F4C814C61A1ED66C0004C3A9 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4C814C71A1ED66C0004C3A9 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F4C814D51A1ED66C0004C3A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F4C814D61A1ED66C0004C3A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F4C814D81A1ED66C0004C3A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = EmailAttachment/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.appcoda.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F4C814D91A1ED66C0004C3A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = EmailAttachment/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.appcoda.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F4C814DB1A1ED66C0004C3A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = EmailAttachmentTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.appcoda.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmailAttachment.app/EmailAttachment";
+			};
+			name = Debug;
+		};
+		F4C814DC1A1ED66C0004C3A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = EmailAttachmentTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.appcoda.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmailAttachment.app/EmailAttachment";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F4C814B31A1ED66C0004C3A9 /* Build configuration list for PBXProject "EmailAttachment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4C814D51A1ED66C0004C3A9 /* Debug */,
+				F4C814D61A1ED66C0004C3A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4C814D71A1ED66C0004C3A9 /* Build configuration list for PBXNativeTarget "EmailAttachment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4C814D81A1ED66C0004C3A9 /* Debug */,
+				F4C814D91A1ED66C0004C3A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4C814DA1A1ED66C0004C3A9 /* Build configuration list for PBXNativeTarget "EmailAttachmentTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4C814DB1A1ED66C0004C3A9 /* Debug */,
+				F4C814DC1A1ED66C0004C3A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F4C814B01A1ED66C0004C3A9 /* Project object */;
+}
