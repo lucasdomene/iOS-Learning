@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Social
 
 class RestaurantTableViewController: UITableViewController {
     var restaurantNames = ["Cafe Deadend", "Homei", "Teakha", "Cafe Loisl", "Petite Oyster", "For Kee Restaurant", "Po's Atelier", "Bourke Street Bakery", "Haigh's Chocolate", "Palomino Espresso", "Upstate", "Traif", "Graham Avenue Meats", "Waffle & Wolf", "Five Leaves", "Cafe Lore", "Confessional", "Barrafina", "Donostia", "Royal Oak", "Thai Cafe"]
@@ -115,7 +116,19 @@ class RestaurantTableViewController: UITableViewController {
         let shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Share", handler: { (action:UITableViewRowAction, indexPath:IndexPath) -> Void in
 
             let shareMenu = UIAlertController(title: nil, message: "Share using", preferredStyle: .actionSheet)
-            let twitterAction = UIAlertAction(title: "Twitter", style: UIAlertActionStyle.default, handler: nil)
+            let twitterAction = UIAlertAction(title: "Twitter", style: .default, handler: { action -> Void in
+                guard SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) else {
+                    let alertMessage = UIAlertController(title: "Twitter Unavailable", message: "You haven't registered your Twitter account. Please go to Settings > Twitter to create one.", preferredStyle: .alert)
+                    alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alertMessage, animated: true, completion: nil)
+                    return
+                }
+                
+                let tweetComposer = SLComposeViewController(forServiceType: SLServiceTypeTwitter)!
+                tweetComposer.setInitialText(self.restaurantNames[indexPath.row])
+                tweetComposer.add(UIImage(named: self.restaurantNames[indexPath.row]))
+                self.present(tweetComposer, animated: true, completion: nil)
+            })
             let facebookAction = UIAlertAction(title: "Facebook", style: UIAlertActionStyle.default, handler: nil)
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
             
