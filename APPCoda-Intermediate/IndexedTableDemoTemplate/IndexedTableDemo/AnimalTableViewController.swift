@@ -67,6 +67,16 @@ class AnimalTableViewController: UITableViewController {
         return index
     }
     
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let headerView = view as! UITableViewHeaderFooterView
+        headerView.textLabel?.textColor = UIColor.orange
+        headerView.textLabel?.font = UIFont(name: "Avenir", size: 25.0)
+    }
+    
     // Helper Methods
     
     func createAnimalDict() {
