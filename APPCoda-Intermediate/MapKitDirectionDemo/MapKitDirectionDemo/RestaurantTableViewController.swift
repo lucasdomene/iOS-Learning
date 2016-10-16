@@ -42,22 +42,22 @@ class RestaurantTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // Return the number of sections.
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
         return restaurants.count
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) 
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) 
 
         // Configure the cell...
-        let restaurant = restaurants[indexPath.row]
+        let restaurant = restaurants[(indexPath as NSIndexPath).row]
         cell.textLabel?.text = restaurant.name
         cell.detailTextLabel?.text = restaurant.category
         cell.imageView?.image = UIImage(named: restaurant.image)
@@ -105,17 +105,17 @@ class RestaurantTableViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if segue.identifier == "showLocation" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let destinationController = segue.destinationViewController as! UINavigationController
+                let destinationController = segue.destination as! UINavigationController
                 let mapViewController = destinationController.childViewControllers.first as! MapViewController
-                mapViewController.restaurant = restaurants[indexPath.row]
+                mapViewController.restaurant = restaurants[(indexPath as NSIndexPath).row]
             }
         }
     }
 
     
-    @IBAction func homeScreen(segue:UIStoryboardSegue) {
+    @IBAction func homeScreen(_ segue:UIStoryboardSegue) {
     }
 }

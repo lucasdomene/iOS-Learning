@@ -49,28 +49,28 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 
     }
 
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let identifier = "MyPin"
         
-        if annotation.isKindOfClass(MKUserLocation) {
+        if annotation.isKind(of: MKUserLocation.self) {
             return nil
         }
         
         // Reuse the annotation if possible
-        var annotationView:MKPinAnnotationView? = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier) as? MKPinAnnotationView
+        var annotationView:MKPinAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
         
         if annotationView == nil {
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             annotationView?.canShowCallout = true
         }
         
-        let leftIconView = UIImageView(frame: CGRectMake(0, 0, 53, 53))
+        let leftIconView = UIImageView(frame: CGRect(x: 0, y: 0, width: 53, height: 53))
         leftIconView.image = UIImage(named: restaurant.image)!
         annotationView?.leftCalloutAccessoryView = leftIconView
         
         // Pin color customization
         if #available(iOS 9.0, *) {
-            annotationView?.pinTintColor = UIColor.orangeColor()
+            annotationView?.pinTintColor = UIColor.orange
         }
         
         return annotationView
