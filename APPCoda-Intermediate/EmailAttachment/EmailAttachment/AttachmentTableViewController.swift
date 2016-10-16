@@ -59,8 +59,23 @@ class AttachmentTableViewController: UITableViewController, MFMailComposeViewCon
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         let selectedFile = filenames[indexPath.row]
-        showEmail(attachmentFile: selectedFile)
+        
+        let alertController = UIAlertController(title: "Choose an option", message: "Do you want to send the file using SMS or E-mail?", preferredStyle: .actionSheet)
+        
+        // SMS action
+        alertController.addAction(UIAlertAction(title: "SMS", style: .default, handler: { action in
+            self.sendSMS(attachment: selectedFile)
+        }))
+        
+        // Mail action
+        alertController.addAction(UIAlertAction(title: "E-mail", style: .default, handler: { action in
+            self.showEmail(attachmentFile: selectedFile)
+        }))
+        
+        present(alertController, animated: true, completion: nil)
     }
     
     // Mail
@@ -93,6 +108,24 @@ class AttachmentTableViewController: UITableViewController, MFMailComposeViewCon
             
             present(mailComposer, animated: true, completion: nil)
         }
+    }
+    
+    // Message
+    
+    func sendSMS(attachment: String) {
+        guard MFMessageComposeViewController.canSendText() else {
+            let alertMessage = UIAlertController(title: "SMS unavailable", message: "Your device is not capable of sending SMS", preferredStyle: .alert)
+            alertMessage.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            present(alertMessage, animated: true, completion: nil)
+            return
+        }
+        
+        let messageController = MFMessageComposeViewController()
+        messageController.messageComposeDelegate = self
+        messageController.recipients = ["12345678", "72345524"]
+        messageController.body = "Just sent the \(attachment) to your email. Please check!"
+        
+        present(messageController, animated: true, completion: nil)
     }
     
     // MFMailComposeViewControllerDelegate
