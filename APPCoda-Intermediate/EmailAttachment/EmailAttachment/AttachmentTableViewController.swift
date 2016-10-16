@@ -125,6 +125,14 @@ class AttachmentTableViewController: UITableViewController, MFMailComposeViewCon
         messageController.recipients = ["12345678", "72345524"]
         messageController.body = "Just sent the \(attachment) to your email. Please check!"
         
+        let fileParts = attachment.components(separatedBy: ".")
+        let fileName = fileParts[0]
+        let fileExtension = fileParts[1]
+        let filePath = Bundle.main.path(forResource: fileName, ofType: fileExtension)
+        let fileURL = URL(fileURLWithPath: filePath!)
+        
+        messageController.addAttachmentURL(fileURL, withAlternateFilename: nil)
+        
         present(messageController, animated: true, completion: nil)
     }
     
