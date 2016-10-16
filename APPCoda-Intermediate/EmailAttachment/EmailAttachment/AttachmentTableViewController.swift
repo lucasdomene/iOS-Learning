@@ -9,7 +9,7 @@
 import UIKit
 import MessageUI
 
-class AttachmentTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
+class AttachmentTableViewController: UITableViewController, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate {
 
     enum MIMEType: String {
         case jpg = "image/jpeg"
@@ -107,6 +107,23 @@ class AttachmentTableViewController: UITableViewController, MFMailComposeViewCon
             print("Mail sent")
         case .failed:
             print("Mail failed")
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    // MFMessageComposeViewControllerDelegate
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        switch result {
+        case .cancelled:
+            print("SMS cancelled")
+        case .failed:
+            let alertMessage = UIAlertController(title: "Failure", message: "Failed to send the message.", preferredStyle: .alert)
+            alertMessage.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                present(alertMessage, animated: true, completion: nil)
+        case .sent:
+            print("SMS sent")
         }
         
         dismiss(animated: true, completion: nil)
