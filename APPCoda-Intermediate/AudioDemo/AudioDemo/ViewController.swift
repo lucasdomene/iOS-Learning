@@ -50,6 +50,8 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
             print(error)
         }
     }
+    
+    // IBActions
 
     @IBAction func play(_ sender: AnyObject) {
     }
@@ -106,6 +108,16 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
         
         stopButton.isEnabled = true
         playButton.isEnabled = false
+    }
+    
+    // AVAudioRecorderDelegate
+    
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        if flag {
+            let alertMessage = UIAlertController(title: "Finish recording", message: "Successfully recorded the audio!", preferredStyle: .alert)
+            alertMessage.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            present(alertMessage, animated: true, completion: nil)
+        }
     }
     
 }
