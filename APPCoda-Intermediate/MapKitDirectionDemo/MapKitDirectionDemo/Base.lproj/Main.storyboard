@@ -67,12 +67,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="47b-V9-rOh"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttV-bx-SNS">
+                                <state key="normal" title="Nearby"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="47b-V9-rOh" secondAttribute="trailing" id="D66-vv-iP3"/>
+                            <constraint firstAttribute="trailing" secondItem="ttV-bx-SNS" secondAttribute="trailing" constant="8" id="JQJ-lA-hW0"/>
                             <constraint firstItem="47b-V9-rOh" firstAttribute="leading" secondItem="wFC-zn-9Qg" secondAttribute="leading" id="QZ2-eg-9WV"/>
                             <constraint firstItem="fp8-H2-8If" firstAttribute="top" secondItem="47b-V9-rOh" secondAttribute="bottom" id="dPT-h2-0z7"/>
+                            <constraint firstItem="ttV-bx-SNS" firstAttribute="top" secondItem="7YW-ft-sRF" secondAttribute="bottom" constant="8" id="mYX-7h-hH7"/>
                             <constraint firstItem="47b-V9-rOh" firstAttribute="top" secondItem="7YW-ft-sRF" secondAttribute="bottom" id="y6T-tr-sse"/>
                         </constraints>
                     </view>
