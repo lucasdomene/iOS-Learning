@@ -122,15 +122,24 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             annotationView?.canShowCallout = true
         }
         
-        let leftIconView = UIImageView(frame: CGRect(x: 0, y: 0, width: 53, height: 53))
-        leftIconView.image = UIImage(named: restaurant.image)!
-        annotationView?.leftCalloutAccessoryView = leftIconView
-        
-        annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-        
-        // Pin color customization
-        if #available(iOS 9.0, *) {
-            annotationView?.pinTintColor = UIColor.orange
+        if let currentPlacemarkCoordinate = currentPlacemark?.location?.coordinate {
+            if currentPlacemarkCoordinate.latitude == annotation.coordinate.latitude && currentPlacemarkCoordinate.longitude == annotation.coordinate.longitude {
+                let leftIconView = UIImageView(frame: CGRect(x: 0, y: 0, width: 53, height: 53))
+                leftIconView.image = UIImage(named: restaurant.image)!
+                annotationView?.leftCalloutAccessoryView = leftIconView
+                
+                annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+                
+                // Pin color customization
+                if #available(iOS 9.0, *) {
+                    annotationView?.pinTintColor = UIColor.orange
+                }
+            } else {
+                // Pin color customization
+                if #available(iOS 9.0, *) {
+                    annotationView?.pinTintColor = UIColor.red
+                }
+            }
         }
         
         return annotationView
@@ -157,6 +166,40 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             }
         }
         
+    }
+    
+    // Local Search
+    
+    @IBAction func showNearby(sender: AnyObject) {
+        let searchRequest = MKLocalSearchRequest()
+        searchRequest.naturalLanguageQuery = restaurant.category
+        searchRequest.region = mapView.region
+        
+        let localSearch = MKLocalSearch(request: searchRequest)
+        localSearch.start { (response, error) in
+            guard let response = response else {
+                if let error = error {
+                    print(error)
+                }
+                
+                return
+            }
+            
+            let mapItems = response.mapItems
+            var nearbyAnnotations: [MKAnnotation] = []
+            for item in mapItems {
+                let annotation = MKPointAnnotation()
+                annotation.title = item.name
+                annotation.subtitle = item.phoneNumber
+                
+                if let location = item.placemark.location {
+                    annotation.coordinate = location.coordinate
+                }
+                nearbyAnnotations.append(annotation)
+            }
+            
+            self.mapView.showAnnotations(nearbyAnnotations, animated: true)
+        }
     }
     
 }
