@@ -23,13 +23,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func play(sender: AnyObject) {
+    @IBAction func play(_ sender: AnyObject) {
     }
     
-    @IBAction func stop(sender: AnyObject) {
+    @IBAction func stop(_ sender: AnyObject) {
     }
     
-    @IBAction func record(sender: AnyObject) {
+    @IBAction func record(_ sender: AnyObject) {
     }
     
 }
