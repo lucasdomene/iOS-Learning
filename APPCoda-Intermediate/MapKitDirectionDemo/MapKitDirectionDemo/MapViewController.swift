@@ -14,11 +14,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView:MKMapView!
     @IBOutlet weak var segmentedControl:UISegmentedControl!
     
-    var restaurant:Restaurant!
+    var restaurant: Restaurant!
     let locationManager = CLLocationManager()
     var currentPlacemark: CLPlacemark?
     var currentTransportType = MKDirectionsTransportType.automobile
-
+    var currentRoute: MKRoute?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -95,6 +96,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             }
             
             let route = routeResponse.routes[0]
+            self.currentRoute = route
             self.mapView.removeOverlays(self.mapView.overlays)
             self.mapView.add(route.polyline, level: .aboveRoads)
             
@@ -124,6 +126,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         leftIconView.image = UIImage(named: restaurant.image)!
         annotationView?.leftCalloutAccessoryView = leftIconView
         
+        annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        
         // Pin color customization
         if #available(iOS 9.0, *) {
             annotationView?.pinTintColor = UIColor.orange
@@ -137,6 +141,22 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         renderer.strokeColor = currentTransportType == .automobile ? UIColor.blue : UIColor.orange
         renderer.lineWidth = 3.0
         return renderer
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        performSegue(withIdentifier: "showSteps", sender: view)
+    }
+    
+    // Segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showSteps" {
+            let routeTableViewController = segue.destination as! RouteTableViewController
+            if let steps = currentRoute?.steps {
+                routeTableViewController.routeSteps = steps
+            }
+        }
+        
     }
     
 }

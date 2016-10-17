@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A06B73D61DB549090095AB10 /* RouteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B73D51DB549090095AB10 /* RouteTableViewController.swift */; };
 		F41EB4E11A1AEB1100DAF540 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41EB4E01A1AEB1100DAF540 /* AppDelegate.swift */; };
 		F41EB4E61A1AEB1100DAF540 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F41EB4E41A1AEB1100DAF540 /* Main.storyboard */; };
 		F41EB4E81A1AEB1100DAF540 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F41EB4E71A1AEB1100DAF540 /* Images.xcassets */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A06B73D51DB549090095AB10 /* RouteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTableViewController.swift; sourceTree = "<group>"; };
 		F41EB4DB1A1AEB1100DAF540 /* MapKitDirectionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapKitDirectionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41EB4DF1A1AEB1100DAF540 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F41EB4E01A1AEB1100DAF540 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				F41EB5001A1AEBC100DAF540 /* RestaurantTableViewController.swift */,
 				F41EB50A1A1AF5B700DAF540 /* MapViewController.swift */,
 				F41EB50C1A1AF86A00DAF540 /* Restaurant.swift */,
+				A06B73D51DB549090095AB10 /* RouteTableViewController.swift */,
 			);
 			path = MapKitDirectionDemo;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A06B73D61DB549090095AB10 /* RouteTableViewController.swift in Sources */,
 				F41EB50D1A1AF86A00DAF540 /* Restaurant.swift in Sources */,
 				F41EB5011A1AEBC100DAF540 /* RestaurantTableViewController.swift in Sources */,
 				F41EB4E11A1AEB1100DAF540 /* AppDelegate.swift in Sources */,
