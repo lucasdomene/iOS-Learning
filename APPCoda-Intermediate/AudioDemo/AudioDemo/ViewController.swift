@@ -58,6 +58,36 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     @IBAction func record(_ sender: AnyObject) {
+        if let player = audioPlayer {
+            if player.isPlaying {
+                player.stop()
+                playButton.setImage(UIImage(named: "play"), for: .normal)
+                playButton.isSelected = false
+            }
+        }
+        
+        if let recorder = audioRecorder {
+            if !recorder.isRecording {
+                let audioSession = AVAudioSession.sharedInstance()
+                
+                do {
+                    try audioSession.setActive(true)
+                    
+                    recorder.record()
+                    recordButton.setImage(UIImage(named: "recording"), for: .selected)
+                    recordButton.isSelected = true
+                } catch {
+                    print(error)
+                }
+            } else {
+                recorder.pause()
+                recordButton.setImage(UIImage(named: "pause"), for: .normal)
+                recordButton.isSelected = false
+            }
+        }
+        
+        stopButton.isEnabled = true
+        playButton.isEnabled = false
     }
     
 }
