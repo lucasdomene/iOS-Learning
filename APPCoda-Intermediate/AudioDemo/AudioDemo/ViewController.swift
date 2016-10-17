@@ -9,18 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
     @IBOutlet weak var playButton:UIButton!
     @IBOutlet weak var stopButton:UIButton!
     @IBOutlet weak var recordButton:UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     @IBAction func play(_ sender: AnyObject) {
