@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -55,7 +54,7 @@
             </objects>
             <point key="canvasLocation" x="1161" y="327"/>
         </scene>
-        <!--Map-->
+        <!--Map View Controller-->
         <scene sceneID="XsT-aI-WTA">
             <objects>
                 <viewController id="RKm-fe-EsN" customClass="MapViewController" customModule="MapKitDirectionDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -77,22 +76,30 @@
                             <constraint firstItem="47b-V9-rOh" firstAttribute="top" secondItem="7YW-ft-sRF" secondAttribute="bottom" id="y6T-tr-sse"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Map" id="Twf-IR-pvC">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="done" id="xqI-GM-8g3">
-                                <connections>
-                                    <segue destination="9S6-9j-r9M" kind="unwind" unwindAction="homeScreen:" id="ghH-il-tXF"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Direction" id="cmi-4d-Ch0">
-                                <connections>
-                                    <action selector="showDirectionWithSender:" destination="RKm-fe-EsN" id="IMM-T4-xhA"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                    <navigationItem key="navigationItem" id="Twf-IR-pvC">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="Direction" id="cmi-4d-Ch0">
+                            <connections>
+                                <action selector="showDirectionWithSender:" destination="RKm-fe-EsN" id="IMM-T4-xhA"/>
+                            </connections>
+                        </barButtonItem>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="nEU-NE-6aE">
+                            <rect key="frame" x="113" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Car"/>
+                                <segment title="Walking"/>
+                            </segments>
+                        </segmentedControl>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="xqI-GM-8g3">
+                            <connections>
+                                <segue destination="9S6-9j-r9M" kind="unwind" unwindAction="homeScreen:" id="ghH-il-tXF"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="47b-V9-rOh" id="vJY-EK-g7F"/>
+                        <outlet property="segmentedControl" destination="nEU-NE-6aE" id="ZNg-sv-Tkx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DIi-6l-zjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
