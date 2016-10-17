@@ -7,15 +7,48 @@
 //
 
 import UIKit
+import AVFoundation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AVAudioRecorderDelegate {
     
     @IBOutlet weak var playButton:UIButton!
     @IBOutlet weak var stopButton:UIButton!
     @IBOutlet weak var recordButton:UIButton!
+    
+    var audioRecorder: AVAudioRecorder?
+    var audioPlayer: AVAudioPlayer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        stopButton.isEnabled = false
+        playButton.isEnabled = false
+        
+        guard let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            let alertMessage = UIAlertController(title: "Error", message: "Failed to get the document directory for recording the audio. Please try again later.", preferredStyle: .alert)
+            alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alertMessage, animated: true, completion: nil)
+            return
+        }
+        
+        let audioFileURL = directoryURL.appendingPathComponent("MyAudioMemo.m4a")
+        let audioSession = AVAudioSession.sharedInstance()
+        
+        do {
+            try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord, with: .defaultToSpeaker)
+            
+            let recorderSetting: [String: Any] = [AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+                                   AVSampleRateKey: 44100.0,
+                                   AVNumberOfChannelsKey: 2,
+                                   AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue]
+            
+            audioRecorder = try AVAudioRecorder(url: audioFileURL, settings: recorderSetting)
+            audioRecorder?.delegate = self
+            audioRecorder?.isMeteringEnabled = true
+            audioRecorder?.prepareToRecord()
+        } catch {
+            print(error)
+        }
     }
 
     @IBAction func play(_ sender: AnyObject) {
