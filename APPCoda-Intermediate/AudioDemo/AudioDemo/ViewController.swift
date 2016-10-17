@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController, AVAudioRecorderDelegate {
+class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
     
     @IBOutlet weak var playButton:UIButton!
     @IBOutlet weak var stopButton:UIButton!
@@ -54,6 +54,21 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
     // IBActions
 
     @IBAction func play(_ sender: AnyObject) {
+        if let recorder = audioRecorder {
+            if !recorder.isRecording {
+                do {
+                    try audioPlayer = AVAudioPlayer(contentsOf: recorder.url)
+                    
+                    audioPlayer?.delegate = self
+                    audioPlayer?.play()
+                    
+                    playButton.setImage(UIImage(named: "playing"), for: .selected)
+                    playButton.isSelected = true
+                } catch {
+                    print(error)
+                }
+            }
+        }
     }
     
     @IBAction func stop(_ sender: AnyObject) {
@@ -118,6 +133,17 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
             alertMessage.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             present(alertMessage, animated: true, completion: nil)
         }
+    }
+    
+    // AVAudioPlayerDelegate
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        playButton.setImage(UIImage(named: "play"), for: .normal)
+        playButton.isSelected = false
+        
+        let alertMessage = UIAlertController(title: "Finished playing", message: "Finished playing the recording!", preferredStyle: .alert)
+        alertMessage.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(alertMessage, animated: true, completion: nil)
     }
     
 }
