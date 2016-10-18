@@ -57,6 +57,26 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         }
     }
     
+    func lauchApp(decodedURL: String) {
+        if presentedViewController != nil {
+            return
+        }
+        
+        let alertPrompt = UIAlertController(title: "Open App", message: "You're going to open \(decodedURL)", preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { action in
+            if let url = URL(string: decodedURL) {
+                if UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.openURL(url)
+                }
+            }
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertPrompt.addAction(confirmAction)
+        alertPrompt.addAction(cancelAction)
+        
+        present(alertPrompt, animated: true, completion: nil)
+    }
+    
     // AVCaptureMetadataOutputObjectsDelegate
     
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
@@ -74,6 +94,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             
             if metadataObj.stringValue != nil {
                 messageLabel.text = metadataObj.stringValue
+                lauchApp(decodedURL: metadataObj.stringValue)
             }
         }
     }
